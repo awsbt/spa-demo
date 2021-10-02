@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service-label-key: service-label-spa-demo 
+  name: service-name-loadbalancer
+spec:
+  type: LoadBalancer
+  ports:
+  - name: service-port-spa-demo
+    port: 80
+    protocol: TCP
+  selector:
+    deployment-label-key: deployment-label-spa-demo

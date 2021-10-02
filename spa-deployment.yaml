@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-spa-demo
+  labels:
+    deployment-label-key: deployment-label-spa-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment-label-key: deployment-label-spa-demo
+  template:
+    metadata:
+      labels:
+        deployment-label-key: deployment-label-spa-demo  
+    spec:
+      containers:
+        - name: deploment-container-spa-demo
+          image: billtsaiva/spa-demo:v1
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80

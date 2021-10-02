@@ -1,0 +1,10 @@
+#for creating a deployment in kubernetes
+ kubectl apply -f spa-deployment.yaml
+ #for internal communicating to angualar application
+ kubectl apply -f spa-service.yaml
+ #for access the angular application outside kubernetes
+ kubectl apply -f spa-load-balancer-service.yaml
+
+ minikube tunnel    *important in minikube
+
+ kubectl expose deployment deployment-spa-demo --type=LoadBalancer --name=service-name-loadbalancer
